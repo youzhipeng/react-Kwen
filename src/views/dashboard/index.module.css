@@ -1,0 +1,7 @@
+.kerwinactive{
+    color:red;
+}
+/* 全局的设置 */
+:global(#kerwinid){
+    background: yellow;
+}

@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import BlogRouter from './router'
+import { Provider } from 'react-redux';
+import store from './redux/store';
+//根组件
+class App extends React.Component{
+  render(){
+    return <Provider store={store}>
+        {/* context 上下文 消费者生产者模式 */}
+        <BlogRouter/>
+    </Provider>
+  }
 }
+
+/*
+  new Vue({
+    render:h=>h(App)
+    router,
+    store
+  }).$mount("#app")
+
+*/
 
 export default App;
